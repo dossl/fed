@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Propuesta de servicio&colon; sistema de inteligencia comercial para proyectos industriales en Europa</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension marp-team.marp-vscode */
+#__marp-vscode {
+  all: revert;
+}
+
+/* Override VS Code default CSS rules reverting to initial
+   https://github.com/microsoft/vscode/blob/master/src/vs/workbench/contrib/webview/browser/pre/main.js#L53 */
+html:has(body.marp-vscode) {
+  padding: 0;
+}
+
+body.marp-vscode {
+  padding: 0;
+}
+
+body.marp-vscode img {
+  max-width: unset;
+  max-height: unset;
+}
+
+body.marp-vscode a,
+body.marp-vscode a:hover,
+body.marp-vscode code {
+  color: unset;
+}
+
+body.marp-vscode blockquote {
+  background: unset;
+  border-color: unset;
+}
+
+@media screen {
+  body.marp-vscode {
+    overflow-y: scroll;
+
+    /* stylelint-disable-next-line selector-class-pattern */
+    &.showEditorSelection {
+      --marp-vscode-highlight-color: rgb(255 255 255 / 40%);
+
+      &.vscode-light {
+        --marp-vscode-highlight-color: rgb(0 0 0 / 15%);
+      }
+
+      &.vscode-high-contrast {
+        --marp-vscode-highlight-color: rgb(255 160 0 / 70%);
+      }
+    }
+  }
+
+  #__marp-vscode [data-marp-vscode-slide-wrapper] {
+    margin: 20px;
+    position: relative;
+
+    &.code-active-line,
+    &:has(.code-active-line) {
+      &::before {
+        position: absolute;
+        content: '';
+        inset: -7px;
+        border: 3px solid var(--marp-vscode-highlight-color, transparent);
+        pointer-events: none;
+      }
+    }
+  }
+
+  #__marp-vscode svg[data-marpit-svg] {
+    box-shadow: 0 5px 10px rgb(0 0 0 / 25%);
+    display: block;
+    margin: 0;
+  }
+
+  /* Based on https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+  #code-csp-warning {
+    background-color: #444;
+    box-shadow: 1px 1px 1px rgb(0 0 0 / 25%);
+    color: white;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-size: 12px;
+    line-height: 22px;
+    margin: 16px;
+    padding: 6px;
+    position: fixed;
+    right: 0;
+    text-align: center;
+    top: 0;
+    overflow-wrap: break-word;
+  }
+
+  #code-csp-warning:hover {
+    text-decoration: none;
+    background-color: #007acc;
+    box-shadow: 2px 2px 2px rgb(0 0 0 / 25%);
+  }
+}
+
+@media print {
+  body.marp-vscode #code-csp-warning {
+    display: none;
+  }
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <span id="markdown-mermaid" aria-hidden="true" data-config="{&quot;darkModeTheme&quot;:&quot;vscode&quot;,&quot;lightModeTheme&quot;:&quot;vscode&quot;,&quot;maxTextSize&quot;:50000,&quot;clickDrag&quot;:&quot;alt&quot;,&quot;showControls&quot;:&quot;onHoverOrFocus&quot;,&quot;resizable&quot;:true,&quot;maxHeight&quot;:&quot;&quot;}"></span>
+				<h1 id="propuesta-de-servicio-sistema-de-inteligencia-comercial-para-proyectos-industriales-en-europa">Propuesta de servicio: sistema de inteligencia comercial para proyectos industriales en Europa</h1>
+<p><strong>Preparada para:</strong> FED Engineering Resources<br>
+<strong>Preparada por:</strong> Enrique Acosta y Sergio Cabarrouy<br>
+<strong>Fecha:</strong> 6 de julio de 2026<br>
+<strong>Versión:</strong> 1</p>
+<blockquote>
+<p><strong>Nota sobre precios de terceros:</strong> los precios de herramientas y bases de datos incluidos en esta propuesta son estimaciones de mercado a julio de 2026. Se confirmarán directamente con cada proveedor antes de la contratación.</p>
+</blockquote>
+<hr>
+<h2 id="1-objeto-de-la-propuesta">1. Objeto de la propuesta</h2>
+<p>Engineering Resources vende personal técnico especializado de ingeniería y construcción a los participantes en grandes proyectos industriales europeos. Para vender ese servicio en el momento oportuno hace falta saber, antes que la competencia, qué proyectos avanzan, qué empresas participan en ellos y quiénes son las personas que deciden.</p>
+<p>Esta propuesta describe un servicio completo para conseguirlo: primero una fase de validación de dos meses, operada por nuestro equipo con un proceso manual asistido por inteligencia artificial, y después, solo si esa validación demuestra que el canal genera reuniones comerciales, la construcción de un sistema que automatice la detección de proyectos, la identificación de empresas y contactos, y la preparación de la acción comercial semanal.</p>
+<p>El principio que guía toda la propuesta es este: el valor no está en usar inteligencia artificial, sino en disponer de señales tempranas, contactos correctos y una acción comercial rápida. Por eso el gasto se escala por fases, y cada fase solo se inicia si la anterior ha demostrado resultados medibles.</p>
+<hr>
+<h2 id="2-alcance-del-servicio">2. Alcance del servicio</h2>
+<table>
+<thead>
+<tr>
+<th>Dimensión</th>
+<th>Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Geografía</td>
+<td>Europa geográfica, incluyendo Reino Unido y Noruega</td>
+</tr>
+<tr>
+<td>Países prioritarios</td>
+<td>Alemania, Países Bajos, Bélgica y Dinamarca</td>
+</tr>
+<tr>
+<td>Países en seguimiento</td>
+<td>Francia, España, Polonia, Italia, Reino Unido y Noruega</td>
+</tr>
+<tr>
+<td>Sectores</td>
+<td>1. Energías renovables: eólica terrestre y marina, solar de gran escala, almacenamiento en baterías, hidrógeno, biometano, amoníaco y combustibles derivados. 2. Petróleo y gas, incluidas las terminales de gas natural licuado y la infraestructura gasista. 3. Infraestructura industrial: puertos, centros de datos, plantas químicas, gigafactorías e interconexiones eléctricas</td>
+</tr>
+<tr>
+<td>Tamaño de proyecto FED objetivo</td>
+<td>Inversión superior a 300 millones de euros, o indicios de una escala equivalente. Se podrán marcar excepciones manualmente</td>
+</tr>
+<tr>
+<td>Fases de proyecto de interés</td>
+<td>Desde los estudios de viabilidad y el diseño conceptual, pasando por la ingeniería básica (FEED, por sus siglas en inglés de Front End Engineering Design), la tramitación de permisos, la decisión final de inversión y la licitación del contrato principal de ingeniería, compras y construcción (EPC, por sus siglas en inglés), hasta el inicio de la construcción. Los proyectos en puesta en marcha o en operación se descartan automáticamente</td>
+</tr>
+<tr>
+<td>Idiomas de monitoreo</td>
+<td>Inglés, alemán, neerlandés, francés, español, polaco, italiano, danés y noruego. Los permisos y la prensa regional de cada país no se publican en inglés, y ahí están las señales más tempranas</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="3-visión-general-de-la-solución-tres-fases-con-puertas-de-decisión">3. Visión general de la solución: tres fases con puertas de decisión</h2>
+<table>
+<thead>
+<tr>
+<th>Fase</th>
+<th>Contenido</th>
+<th>Duración</th>
+<th>Presupuesto</th>
+<th>Puerta para pasar a la siguiente fase</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fase 1. Validación comercial</td>
+<td>Nuestro equipo opera un proceso manual asistido por inteligencia artificial</td>
+<td>60 días</td>
+<td>Entre 4.800 y 6.200 euros</td>
+<td>Al menos 5 reuniones comerciales generadas</td>
+</tr>
+<tr>
+<td>Fase 2. Construcción del sistema</td>
+<td>Desarrollo del sistema automatizado y seis meses de operación</td>
+<td>De 10 a 12 semanas de desarrollo, más 6 meses de operación</td>
+<td>Presupuesto de control de 65.000 euros</td>
+<td>Al menos 8 reuniones comerciales por trimestre</td>
+</tr>
+<tr>
+<td>Fase 3. Ampliación</td>
+<td>Bases de datos de pago, automatización del correo donde sea legal y mejoras</td>
+<td>A definir</td>
+<td>Entre 25.000 y 60.000 euros</td>
+<td>Contratos atribuibles al canal</td>
+</tr>
+</tbody>
+</table>
+<p>La Fase 1 es obligatoria antes de construir el sistema. Si con un proceso manual bien ejecutado no se generan reuniones, un sistema automatizado no las creará: la automatización multiplica un proceso que funciona, no arregla uno que no funciona. Esta disciplina protege la inversión de Engineering Resources.</p>
+<hr>
+<h2 id="4-fase-1-validación-comercial-60-días">4. Fase 1: validación comercial (60 días)</h2>
+<p>Nuestro equipo ejecuta esta fase de principio a fin como servicio facturable, con el siguiente alcance comprometido:</p>
+<ol>
+<li><strong>Configuración de las herramientas.</strong> Alta y parametrización de todo el conjunto de herramientas descrito en la sección 7: la base de datos operativa, el sistema de gestión comercial, la plataforma de automatización, las alertas en los nueve idiomas de trabajo, el lector de noticias, la licencia de prospección de LinkedIn, el servicio de verificación de correos y las plantillas de mensaje por canal y por país.</li>
+<li><strong>Infraestructura mínima.</strong> Entorno de automatización, repositorio de configuración, copias de seguridad y registro de actividad.</li>
+<li><strong>Operación del proceso semanal.</strong> Diez horas semanales de nuestro equipo ejecutando el ciclo completo de lunes a viernes descrito en la sección 8.6, durante las ocho o nueve semanas de la fase, con el objetivo de validar el modelo de negocio.</li>
+<li><strong>Documentación.</strong> De la infraestructura montada, de los procedimientos empleados y de sus resultados, con un informe final que incluye las métricas obtenidas y una recomendación fundamentada de continuar o detenerse.</li>
+<li><strong>Propuesta de Cumplimiento GDPR.</strong> Elaboramos la matriz de canal de contacto por país, las plantillas de información al interesado del artículo 14 del Reglamento General de Protección de Datos y la evaluación de interés legítimo. Engineering Resources deberá validar este documento con sus propios asesores legales antes del primer envío; esa validación externa corre por cuenta del cliente y no está incluida en esta propuesta.</li>
+</ol>
+<h3 id="41-partida-de-mano-de-obra">4.1 Partida de mano de obra</h3>
+<p>Tarifa media facturable de referencia: 30 euros por hora.</p>
+<table>
+<thead>
+<tr>
+<th>Concepto</th>
+<th>Horas</th>
+<th>Coste</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Configuración de herramientas e infraestructura mínima</td>
+<td>De 24 a 40 horas</td>
+<td>De 720 a 1.200 euros</td>
+</tr>
+<tr>
+<td>Operación del proceso semanal (10 horas semanales durante 8 o 9 semanas)</td>
+<td>De 80 a 90 horas</td>
+<td>De 2.400 a 2.700 euros</td>
+</tr>
+<tr>
+<td>Documentación de infraestructura, procedimientos y resultados</td>
+<td>De 16 a 24 horas</td>
+<td>De 480 a 720 euros</td>
+</tr>
+<tr>
+<td>Propuesta de Cumplimiento GDPR</td>
+<td>De 20 a 30 horas</td>
+<td>De 600 a 900 euros</td>
+</tr>
+<tr>
+<td><strong>Subtotal de mano de obra</strong></td>
+<td><strong>De 140 a 184 horas</strong></td>
+<td><strong>De 4.200 a 5.520 euros</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="42-presupuesto-total-de-la-fase-1">4.2 Presupuesto total de la Fase 1</h3>
+<table>
+<thead>
+<tr>
+<th>Concepto</th>
+<th>Coste</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mano de obra de nuestro equipo</td>
+<td>De 4.200 a 5.520 euros</td>
+</tr>
+<tr>
+<td>Licencias de software (un usuario, dos meses)</td>
+<td>Unos 600 euros</td>
+</tr>
+<tr>
+<td>Validación legal externa de la Propuesta de Cumplimiento GDPR</td>
+<td>A cargo del cliente, no facturada</td>
+</tr>
+<tr>
+<td><strong>Total Fase 1</strong></td>
+<td><strong>Entre 4.800 y 6.200 euros aproximadamente</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="43-compromiso-y-puerta-de-decisión">4.3 Compromiso y puerta de decisión</h3>
+<p>El objetivo de la fase es generar al menos 5 reuniones comerciales. Si no se alcanzan, recomendaremos no construir el sistema y revisar la propuesta de valor comercial, no la tecnología. Toda la infraestructura, la configuración y la documentación entregadas quedan en propiedad de Engineering Resources y son reutilizables como base de la Fase 2.</p>
+<hr>
+<h2 id="5-fuentes-de-información">5. Fuentes de información</h2>
+<h3 id="51-fuentes-públicas-gratuitas-o-de-coste-muy-bajo">5.1 Fuentes públicas, gratuitas o de coste muy bajo</h3>
+<table>
+<thead>
+<tr>
+<th>Fuente</th>
+<th>Qué aporta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TED (el diario oficial de licitaciones públicas de la Unión Europea)</td>
+<td>Licitaciones de organismos públicos, gestores de red, puertos y empresas estatales, mediante su interfaz oficial de datos</td>
+</tr>
+<tr>
+<td>Portal de financiación y licitaciones de la Unión Europea</td>
+<td>Proyectos con financiación europea</td>
+</tr>
+<tr>
+<td>Lista de proyectos energéticos transfronterizos prioritarios de la Comisión Europea</td>
+<td>Proyectos con tramitación acelerada y financiación preferente</td>
+</tr>
+<tr>
+<td>Planes decenales de desarrollo de red de los gestores europeos de electricidad y de gas</td>
+<td>Transmisión eléctrica, almacenamiento, gas e hidrógeno</td>
+</tr>
+<tr>
+<td>Observatorio Europeo del Hidrógeno y mapa europeo de infraestructura de hidrógeno</td>
+<td>Proyectos actuales y futuros de hidrógeno</td>
+</tr>
+<tr>
+<td>Registros nacionales de permisos: la oficina de proyectos energéticos de los Países Bajos, el portal de evaluación ambiental de Alemania, el registro de proyectos de interés nacional del Reino Unido, las consultas públicas de Francia, el regulador energético de Noruega y la tramitación ambiental de España</td>
+<td>La señal temprana más valiosa y gratuita: los grandes proyectos aparecen aquí antes que en la prensa</td>
+</tr>
+<tr>
+<td>Prensa especializada por suscripción de titulares, en los nueve idiomas de trabajo, y notas de prensa de los treinta mayores contratistas principales europeos</td>
+<td>Cobertura del sector privado: adjudicaciones de ingeniería, decisiones de inversión y contratos</td>
+</tr>
+</tbody>
+</table>
+<p>Una aclaración importante que condiciona el diseño: el diario oficial de licitaciones cubre la contratación pública. La mayoría de los grandes proyectos privados de energía no licitan por ese canal, y por eso el sistema se apoya también en la prensa especializada, las notas de prensa de los contratistas y los registros de permisos.</p>
+<h3 id="52-bases-de-datos-de-pago-cuándo-y-cuáles">5.2 Bases de datos de pago: cuándo y cuáles</h3>
+<ol>
+<li>Durante las Fases 1 y 2 no se contrata ninguna base de datos de pago. El sector privado queda cubierto con las fuentes anteriores.</li>
+<li>La primera base de pago recomendada es la del Energy Industries Council (su producto DataStream), orientada precisamente a empresas que venden servicios y personal a proyectos energéticos, y con un coste de suscripción muy inferior al de las grandes bases del sector. Se contrataría al final de la Fase 2 o en la Fase 3.</li>
+<li>Si la eólica marina resulta ser el subsector con más tracción comercial, se evaluará una base especializada en ese mercado, como 4C Offshore.</li>
+<li>Antes de contratar cualquier base de datos de mayor coste se realizará una prueba comparativa de dos o tres proveedores contra treinta proyectos ya conocidos, midiendo cobertura, frescura de la información de fase, calidad de contactos y precio.</li>
+<li>No se contratarán al inicio, por su coste elevado antes de validar el retorno: GlobalData, Rystad Energy, Wood Mackenzie, las bases de S&amp;P, ZoomInfo ni Salesforce.</li>
+</ol>
+<hr>
+<h2 id="6-cumplimiento-normativo-gdpr-y-comunicaciones-comerciales">6. Cumplimiento normativo GDPR y comunicaciones comerciales</h2>
+<p>El cumplimiento normativo está integrado en el diseño del sistema, que impone las reglas en lugar de solo documentarlas. Por ejemplo, el sistema de gestión comercial bloqueará el canal de correo electrónico para el primer contacto comercial en países donde dicho primer contacto por correo electrónico no procede legalmente.</p>
+<h3 id="61-política-de-captación-de-información">6.1 Política de captación de información</h3>
+<ol>
+<li><strong>Permitido:</strong> la monitorización automatizada de información de proyectos y de empresas en fuentes públicas:prensa, notas de prensa, registros de permisos y páginas de proyectos, respetando las condiciones de uso de cada sitio y sin extraer datos personales.</li>
+<li><strong>Prohibido:</strong> la extracción automatizada de datos personales, cualquier automatización sobre LinkedIn (contraria a sus condiciones de uso) y la compra de listas masivas de contactos.</li>
+<li>Los datos de contacto de personas se obtienen únicamente por cuatro vías: búsqueda manual con la licencia de prospección de LinkedIn, el servicio de enriquecimiento contratado con su contrato de encargo de tratamiento firmado, la página web corporativa oficial, y noticias donde la persona aparece públicamente en su cargo.</li>
+</ol>
+<h3 id="62-obligaciones-del-reglamento-general-de-protección-de-datos">6.2 Obligaciones del Reglamento General de Protección de Datos</h3>
+<p>Cada contacto guardado en el sistema llevará una ficha de cumplimiento con su fuente, el motivo comercial, la relevancia del contacto, la fecha de captación, el estado de oposición y la fecha de borrado programado. Además:</p>
+<ol>
+<li>La base jurídica del tratamiento será el interés legítimo, con su evaluación documentada de necesidad, finalidad y ponderación de derechos.</li>
+<li>En la primera comunicación con cada contacto, o antes de un mes desde la captación, se le informará del origen de sus datos y se le facilitará el enlace a la política de privacidad con sus derechos y la posibilidad de oponerse. Es la obligación del artículo 14 del Reglamento.</li>
+<li>Se mantendrá el registro de actividades de tratamiento con esta actividad de prospección.</li>
+<li>Los contactos sin interacción se borrarán o anonimizarán a los doce meses, y existirá una lista de supresión permanente para quienes se opongan.</li>
+<li>Se firmarán contratos de encargo de tratamiento con todos los proveedores que traten datos: la base de datos operativa, el sistema de gestión comercial, el proveedor de inteligencia artificial, el servicio de enriquecimiento de correos, el correo corporativo y la plataforma de automatización.</li>
+</ol>
+<h3 id="63-canal-de-primer-contacto-según-el-país">6.3 Canal de primer contacto según el país</h3>
+<p>La normativa de comunicaciones comerciales varía por país, y en varios de los mercados prioritarios el correo electrónico en frío a una persona identificada está restringido o prohibido. Esta matriz forma parte de la Propuesta de Cumplimiento GDPR y queda pendiente de la validación de los asesores legales de Engineering Resources:</p>
+<table>
+<thead>
+<tr>
+<th>País</th>
+<th>Correo en frío a persona identificada</th>
+<th>Canal de primer contacto recomendado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alemania</td>
+<td>No permitido: la ley contra la competencia desleal exige consentimiento previo incluso entre empresas</td>
+<td>LinkedIn y teléfono</td>
+</tr>
+<tr>
+<td>Dinamarca</td>
+<td>No permitido: la ley de prácticas de marketing exige consentimiento, también entre empresas</td>
+<td>LinkedIn y teléfono</td>
+</tr>
+<tr>
+<td>Países Bajos</td>
+<td>Permitido hacia cuentas corporativas, con posibilidad clara de baja</td>
+<td>Correo electrónico y LinkedIn</td>
+</tr>
+<tr>
+<td>Bélgica</td>
+<td>Permitido con condiciones, hacia personas jurídicas y direcciones funcionales</td>
+<td>Correo a direcciones funcionales y LinkedIn</td>
+</tr>
+<tr>
+<td>Francia</td>
+<td>Permitido si el mensaje se relaciona con la función profesional del destinatario, con posibilidad de baja</td>
+<td>Correo electrónico y LinkedIn</td>
+</tr>
+<tr>
+<td>España</td>
+<td>Restringido: la ley de servicios de la sociedad de la información exige consentimiento salvo relación previa</td>
+<td>LinkedIn y teléfono; correo tras el primer contacto</td>
+</tr>
+<tr>
+<td>Polonia</td>
+<td>Consentimiento requerido</td>
+<td>LinkedIn y teléfono</td>
+</tr>
+<tr>
+<td>Italia</td>
+<td>Consentimiento como regla general</td>
+<td>LinkedIn y teléfono</td>
+</tr>
+<tr>
+<td>Reino Unido</td>
+<td>Permitido hacia empleados de sociedades, con posibilidad de baja</td>
+<td>Correo electrónico y LinkedIn</td>
+</tr>
+<tr>
+<td>Noruega</td>
+<td>Permitido hacia direcciones corporativas genéricas; el correo personal de trabajo requiere consentimiento</td>
+<td>LinkedIn, teléfono y correo a direcciones genéricas</td>
+</tr>
+</tbody>
+</table>
+<p>Consecuencia práctica: en Alemania y Dinamarca, dos de los mercados prioritarios, la vía principal de primer contacto será LinkedIn y el teléfono, no el correo electrónico. La automatización de secuencias de correo de la Fase 3 se activará solo para los Países Bajos, Francia, Bélgica y Reino Unido.</p>
+<h3 id="64-política-de-correos-electrónicos-verificados">6.4 Política de correos electrónicos verificados</h3>
+<p>El orden de obtención de un correo será siempre este:</p>
+<ol>
+<li>Correo publicado por la propia empresa en su web corporativa: confianza alta.</li>
+<li>Correo obtenido del servicio de enriquecimiento contratado, bajo contrato de encargo de tratamiento: confianza media.</li>
+<li>Solo si las dos vías anteriores fallan, correo deducido del patrón corporativo habitual, siempre comprobado con un verificador técnico antes de guardarlo: confianza baja, marcado como deducido.</li>
+</ol>
+<p>Regla estricta: nunca se envía un mensaje a un correo no verificado, y todo contacto registra su fuente y su nivel de confianza.</p>
+<hr>
+<h2 id="7-herramientas-y-costes-mensuales">7. Herramientas y costes mensuales</h2>
+<p>Criterio de selección: el mínimo coste que no comprometa ni la funcionalidad ni el cumplimiento normativo.</p>
+<table>
+<thead>
+<tr>
+<th>Función</th>
+<th>Herramienta</th>
+<th>Coste mensual aproximado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gestión comercial (CRM)</td>
+<td>Pipedrive</td>
+<td>De 15 a 40 euros por usuario</td>
+</tr>
+<tr>
+<td>Base de datos operativa de proyectos, empresas y contactos</td>
+<td>Airtable, plan de equipo</td>
+<td>Unos 20 euros por usuario</td>
+</tr>
+<tr>
+<td>Automatización de flujos</td>
+<td>n8n, versión en la nube</td>
+<td>De 10 a 25 euros</td>
+</tr>
+<tr>
+<td>Inteligencia artificial para clasificación masiva de noticias y proyectos</td>
+<td>Modelo Haiku de Anthropic, procesado por lotes con descuento del cincuenta por ciento</td>
+<td>De 10 a 40 euros</td>
+</tr>
+<tr>
+<td>Inteligencia artificial para el análisis y el informe semanal</td>
+<td>Modelo Opus de Anthropic</td>
+<td>De 10 a 40 euros</td>
+</tr>
+<tr>
+<td>Búsqueda web programática</td>
+<td>Tavily como herramienta principal, con SerpAPI como apoyo puntual</td>
+<td>De 20 a 60 euros</td>
+</tr>
+<tr>
+<td>Alertas y noticias</td>
+<td>Feedly y Google Alerts, con alertas en los nueve idiomas de trabajo</td>
+<td>De 0 a 10 euros</td>
+</tr>
+<tr>
+<td>Prospección de decisores</td>
+<td>LinkedIn Sales Navigator, una licencia en la fase inicial</td>
+<td>Unos 120 euros por licencia</td>
+</tr>
+<tr>
+<td>Enriquecimiento y verificación de correos</td>
+<td>Dropcontact, proveedor europeo diseñado para el cumplimiento del Reglamento General de Protección de Datos</td>
+<td>De 25 a 50 euros</td>
+</tr>
+<tr>
+<td>Envío de correos</td>
+<td>Manual, con el correo corporativo de Google Workspace, durante las dos primeras fases. La automatización de secuencias se valorará en la Fase 3, y solo para los países donde es legal</td>
+<td>Sin coste adicional</td>
+</tr>
+<tr>
+<td>Cuadro de mando</td>
+<td>Looker Studio</td>
+<td>Gratuito</td>
+</tr>
+<tr>
+<td>Documentación interna</td>
+<td>Google Drive</td>
+<td>Incluido</td>
+</tr>
+</tbody>
+</table>
+<p>Coste total de licencias: entre 250 y 400 euros al mes en la Fase 1 con un usuario, y entre 400 y 700 euros al mes en la Fase 2 con dos licencias de prospección y mayores volúmenes. A partir de la puesta en producción se añaden el alojamiento con copias de seguridad y registro (de 50 a 150 euros al mes) y nuestro mantenimiento (de 500 a 1.000 euros al mes).</p>
+<hr>
+<h2 id="8-funcionamiento-del-sistema-fase-2">8. Funcionamiento del sistema (Fase 2)</h2>
+<h3 id="81-módulos">8.1 Módulos</h3>
+<ol>
+<li><strong>Ingesta de datos:</strong> conexión con las interfaces de las fuentes públicas, lectura de alertas y prensa en los nueve idiomas, e incorporación de las fuentes de pago cuando se activen.</li>
+<li><strong>Normalización:</strong> unificación de nombres de empresa, eliminación de proyectos duplicados entre fuentes y estandarización de inversiones, fechas, países y sectores. Cada dato guarda su fuente y su fecha. Si dos fuentes se contradicen, prevalece la más reciente de mayor rango (fuente oficial por delante de base de pago, y esta por delante de prensa), y el conflicto queda registrado.</li>
+<li><strong>Clasificador de inteligencia artificial:</strong> para cada proyecto detectado determina sector, país, inversión estimada, fase, probabilidad de oportunidad comercial y perfiles técnicos que probablemente se necesitarán. Trabaja con salida estructurada y validada. Toda clasificación con fase o inversión dudosa se marca para revisión humana. Instrucción permanente: no inventar datos; si no hay información, indicarlo.</li>
+<li><strong>Motor de señales:</strong> detecta los diez eventos que marcan la ventana comercial: adjudicación de la ingeniería básica, lanzamiento de la licitación del contrato principal, adjudicación del contrato principal, aprobación de la decisión final de inversión, inicio de la construcción, concesión del permiso ambiental, selección del ingeniero del propietario, firma de un acuerdo marco, concesión de fondos a un valle de hidrógeno y aprobación de una ampliación portuaria.</li>
+<li><strong>Mapa de empresas por proyecto:</strong> promotor, contratista principal, ingeniería del propietario, consultoras de ingeniería y subcontratistas por paquete de obra.</li>
+<li><strong>Localización de decisores:</strong> búsqueda manual con la licencia de prospección y enriquecimiento con el servicio contratado, siempre bajo la política de correos verificados. Cargos objetivo, que se buscarán también por sus equivalentes en inglés: director de proyecto, director de construcción, jefe de obra, director de ingeniería, responsable de compras, responsable de subcontratación, responsable de contratos, responsable de control de calidad, responsable de seguridad y salud, responsable de puesta en marcha, responsable de paquete por disciplina y responsable de adquisición de talento.</li>
+<li><strong>Priorización comercial:</strong> la puntuación de la sección 8.3 ordena la cola de trabajo semanal.</li>
+<li><strong>Salida al sistema de gestión comercial:</strong> creación de la empresa, el proyecto, la oportunidad, los contactos y las tareas, junto con un resumen generado por inteligencia artificial que siempre muestra sus fuentes. Principio de diseño: cada recomendación es explicable con evidencia; nada de conclusiones sin fuente.</li>
+<li><strong>Informe semanal automático:</strong> nuevos proyectos, cambios de fase, nuevos actores y las veinte oportunidades mejor puntuadas con su ficha completa.</li>
+</ol>
+<h3 id="82-validación-humana-obligatoria">8.2 Validación humana obligatoria</h3>
+<p>El sistema es semiautomático por diseño: ninguna acción de contacto se ejecuta sin aprobación humana. Esa dedicación operativa, de al menos diez horas semanales de una persona con criterio comercial, es condición de éxito. En la Fase 1 la aporta nuestro equipo como parte del servicio; a partir de la puesta en producción de la Fase 2 la asume Engineering Resources, o puede contratarse como servicio gestionado aparte.</p>
+<h3 id="83-puntuación-de-oportunidades">8.3 Puntuación de oportunidades</h3>
+<table>
+<thead>
+<tr>
+<th>Criterio</th>
+<th>Puntos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Inversión superior a 1.000 millones de euros</td>
+<td>20</td>
+</tr>
+<tr>
+<td>Inversión entre 300 y 1.000 millones de euros</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Fase de adjudicación del contrato principal o inicio de construcción</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Fase de viabilidad, ingeniería básica o licitación del contrato principal</td>
+<td>20</td>
+</tr>
+<tr>
+<td>País prioritario (Alemania, Países Bajos, Bélgica, Dinamarca)</td>
+<td>15</td>
+</tr>
+<tr>
+<td>País en seguimiento (Francia, España, Polonia, Italia, Reino Unido, Noruega)</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Presencia de disciplinas núcleo: gas natural licuado, hidrógeno, tanques, control de calidad, recubrimientos, aislamiento</td>
+<td>20</td>
+</tr>
+<tr>
+<td>Contactos decisores ya identificados</td>
+<td>15</td>
+</tr>
+<tr>
+<td>Última noticia con menos de 30 días</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Fase de puesta en marcha u operación</td>
+<td>Descarte</td>
+</tr>
+</tbody>
+</table>
+<h3 id="84-información-mínima-por-proyecto">8.4 Información mínima por proyecto</h3>
+<p>Identificador, nombre, país, región, sector, subsector, inversión estimada con su moneda, fase con su nivel de confianza, fecha estimada de inicio de construcción, fecha estimada de entrada en operación, promotor, contratista principal, ingeniería del propietario, subcontratistas conocidos, estado de la tramitación de permisos, estado de la licitación, direcciones web de las fuentes, fecha de última actualización, puntuación comercial, servicio recomendado, próxima acción y comercial responsable.</p>
+<h3 id="85-información-mínima-por-contacto">8.5 Información mínima por contacto</h3>
+<p>Nombre, empresa, cargo, nivel jerárquico, departamento, proyecto relacionado, país, perfil de LinkedIn, correo con su nivel de confianza y método de obtención, teléfono, fuente, ficha de cumplimiento (base jurídica, fecha de captación, fecha de la información del artículo 14, estado de oposición y fecha de borrado programado), canal permitido según la matriz por país, fecha del último contacto y próxima acción.</p>
+<h3 id="86-proceso-semanal-de-trabajo">8.6 Proceso semanal de trabajo</h3>
+<table>
+<thead>
+<tr>
+<th>Día</th>
+<th>Actividad</th>
+<th>Dedicación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lunes</td>
+<td>El sistema entrega el informe semanal y se revisa</td>
+<td>2 horas</td>
+</tr>
+<tr>
+<td>Martes</td>
+<td>Validación humana: qué proyectos encajan, qué empresas son objetivo, qué contactos se aprueban y con qué estrategia se aborda cada proyecto (promotor, contratista principal o subcontratista)</td>
+<td>2 horas</td>
+</tr>
+<tr>
+<td>Miércoles y jueves</td>
+<td>Contacto por el canal legal de cada país, con mensajes personalizados que citan el proyecto y su fase, y registro de todo en el sistema de gestión comercial</td>
+<td>De 3 a 4 horas</td>
+</tr>
+<tr>
+<td>Viernes</td>
+<td>Revisión de respuestas, seguimientos, descartes y ajuste de la puntuación</td>
+<td>1 hora</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="9-presupuesto-de-la-fase-2-construcción-del-sistema">9. Presupuesto de la Fase 2: construcción del sistema</h2>
+<p>Duración estimada del desarrollo: de 10 a 12 semanas. Presupuesto de control para el desarrollo más seis meses de operación:</p>
+<table>
+<thead>
+<tr>
+<th>Concepto</th>
+<th>Coste</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Implantación del sistema, a precio cerrado</td>
+<td>50.000 euros</td>
+</tr>
+<tr>
+<td>Licencias de software durante seis meses</td>
+<td>Unos 3.300 euros</td>
+</tr>
+<tr>
+<td>Alojamiento, copias de seguridad y registro durante seis meses</td>
+<td>Unos 600 euros</td>
+</tr>
+<tr>
+<td>Mantenimiento de nuestro equipo durante seis meses desde la puesta en producción</td>
+<td>Unos 3.000 euros</td>
+</tr>
+<tr>
+<td>Contingencia, en torno al diez por ciento</td>
+<td>5.000 euros</td>
+</tr>
+<tr>
+<td>Actualización de la Propuesta de Cumplimiento GDPR a la implementación real (unas 16 horas)</td>
+<td>500 euros</td>
+</tr>
+<tr>
+<td>Validación legal externa de la implementación</td>
+<td>A cargo del cliente, no facturada</td>
+</tr>
+<tr>
+<td><strong>Presupuesto de control de la Fase 2</strong></td>
+<td><strong>65.000 euros aproximadamente</strong></td>
+</tr>
+</tbody>
+</table>
+<p>El precio cerrado incluye: las fuentes públicas y el monitoreo de prensa y permisos, el clasificador de inteligencia artificial con salida estructurada, la integración con el sistema de gestión comercial, el informe semanal, el cuadro de mando, la matriz legal implementada como bloqueo de canal, el manual operativo y la formación. No incluye bases de datos de pago.</p>
+<h3 id="criterios-de-aceptación-del-sistema">Criterios de aceptación del sistema</h3>
+<ol>
+<li>Al menos 300 proyectos cualificados cargados y monitorizados.</li>
+<li>Al menos 50 oportunidades priorizadas acumuladas.</li>
+<li>Al menos 300 contactos validados, cada uno con su fuente y su ficha de cumplimiento.</li>
+<li>Sistema de gestión comercial, informe semanal y cuadro de mando operativos.</li>
+<li>Matriz legal por país activa y bloqueando los canales que no proceden.</li>
+</ol>
+<hr>
+<h2 id="10-fase-3-ampliación-condicionada-a-resultados">10. Fase 3: ampliación (condicionada a resultados)</h2>
+<p>Solo se propone si la Fase 2 genera al menos 8 reuniones comerciales por trimestre.</p>
+<table>
+<thead>
+<tr>
+<th>Concepto</th>
+<th>Coste</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Piloto de base de datos de pago, empezando por la del Energy Industries Council y siempre tras la prueba comparativa con treinta proyectos conocidos</td>
+<td>De 5.000 a 25.000 euros al año</td>
+</tr>
+<tr>
+<td>Automatización de secuencias de correo, solo para los Países Bajos, Francia, Bélgica y Reino Unido, con verificación de dominios y buzones</td>
+<td>De 100 a 300 euros al mes</td>
+</tr>
+<tr>
+<td>Mejoras técnicas: más fuentes, mejor eliminación de duplicados y puntuación aprendida de los resultados</td>
+<td>De 15.000 a 35.000 euros</td>
+</tr>
+<tr>
+<td><strong>Total orientativo de la Fase 3</strong></td>
+<td><strong>Entre 25.000 y 60.000 euros</strong></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="11-indicadores-de-seguimiento">11. Indicadores de seguimiento</h2>
+<p>Semana tipo del sistema en régimen, a partir del segundo mes de operación:</p>
+<table>
+<thead>
+<tr>
+<th>Indicador</th>
+<th>Objetivo semanal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Proyectos nuevos detectados</td>
+<td>20</td>
+</tr>
+<tr>
+<td>Cambios de fase relevantes</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Empresas mapeadas</td>
+<td>50</td>
+</tr>
+<tr>
+<td>Contactos candidatos identificados</td>
+<td>100</td>
+</tr>
+<tr>
+<td>Contactos validados</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Oportunidades priorizadas en el sistema comercial</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<p>El indicador de negocio, el único que justifica seguir invirtiendo, son las reuniones comerciales: cinco en la Fase 1 y ocho por trimestre en la Fase 2. Nuestra filosofía de trabajo: es mejor tener treinta contactos buenos que mil malos, y si no salen reuniones no se compra tecnología más cara.</p>
+<hr>
+<h2 id="12-nuestros-compromisos">12. Nuestros compromisos</h2>
+<ol>
+<li><strong>Propiedad del cliente:</strong> el código, la configuración, la base de datos y la documentación son propiedad de Engineering Resources desde su entrega.</li>
+<li><strong>Precio cerrado</strong> para la implantación de la Fase 2 y coste mensual de mantenimiento conocido de antemano.</li>
+<li><strong>Costes unitarios transparentes:</strong> por cada mil búsquedas web, por cada mil contactos enriquecidos, por cada nueva fuente incorporada y por cambio de sistema de gestión comercial.</li>
+<li><strong>Trazabilidad total:</strong> ningún dato sin fuente verificable, y cada clasificación de la inteligencia artificial muestra la evidencia en la que se basa.</li>
+<li><strong>Cumplimiento como requisito funcional:</strong> la matriz de canal por país implementada como bloqueo real, la ficha de cumplimiento en cada contacto, la información del artículo 14 en el primer mensaje, el borrado automático a los doce meses y la lista de supresión.</li>
+<li><strong>Criterios de aceptación medibles</strong>, los de la sección 9, en lugar de un genérico &quot;el sistema funciona&quot;.</li>
+<li><strong>Manual operativo:</strong> cómo añadir fuentes, revisar errores, cambiar criterios y exportar contactos.</li>
+<li><strong>Alertas:</strong> informe semanal y avisos inmediatos cuando un proyecto entra en ingeniería básica, licita o adjudica su contrato principal, aprueba su inversión o inicia la construcción.</li>
+</ol>
+<hr>
+<h2 id="13-lo-que-este-servicio-no-hará">13. Lo que este servicio no hará</h2>
+<ol>
+<li>Extraer datos personales de forma automatizada ni automatizar acciones sobre LinkedIn.</li>
+<li>Enviar correos en frío a personas identificadas en Alemania, Dinamarca, Polonia o Italia, ni en España sin relación previa.</li>
+<li>Enviar mensajes a correos no verificados ni comprar listas masivas de contactos.</li>
+<li>Contratar bases de datos de decenas de miles de euros al año antes de validar el canal.</li>
+<li>Ejecutar acciones de contacto sin aprobación humana.</li>
+<li>Presentar conclusiones de la inteligencia artificial sin su fuente.</li>
+</ol>
+<hr>
+<h2 id="14-condiciones">14. Condiciones</h2>
+<ol>
+<li>Los precios de herramientas y bases de datos de terceros son orientativos y se confirmarán con cada proveedor antes de contratar.</li>
+<li>La tarifa de mano de obra de referencia es de 30 euros por hora; cualquier trabajo fuera del alcance descrito se presupuestará por separado.</li>
+<li>La validación de la Propuesta de Cumplimiento GDPR y de la implementación por asesores legales es responsabilidad y coste de Engineering Resources.</li>
+<li>La Fase 2 solo se contratará si la Fase 1 alcanza su puerta de decisión, y la Fase 3 solo si la alcanza la Fase 2.</li>
+<li>Validez de esta propuesta: 60 días desde su fecha.</li>
+</ol>
+
+            
+            <script async type="text/javascript">
+/* From extension marp-team.marp-vscode */
+(()=>{var I=Object.defineProperty;var K=(f,u,_)=>u in f?I(f,u,{enumerable:!0,configurable:!0,writable:!0,value:_}):f[u]=_;var r=(f,u)=>I(f,"name",{value:u,configurable:!0});var w=(f,u,_)=>K(f,typeof u!="symbol"?u+"":u,_);(()=>{var f={32(S,E,h){S.exports=h(924)},924(S,E){"use strict";var h;h={value:!0};const b={h1:{proto:r(()=>HTMLHeadingElement,"proto"),attrs:{role:"heading","aria-level":"1"},style:"display: block; font-size: 2em; margin-block-start: 0.67em; margin-block-end: 0.67em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h2:{proto:r(()=>HTMLHeadingElement,"proto"),attrs:{role:"heading","aria-level":"2"},style:"display: block; font-size: 1.5em; margin-block-start: 0.83em; margin-block-end: 0.83em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h3:{proto:r(()=>HTMLHeadingElement,"proto"),attrs:{role:"heading","aria-level":"3"},style:"display: block; font-size: 1.17em; margin-block-start: 1em; margin-block-end: 1em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h4:{proto:r(()=>HTMLHeadingElement,"proto"),attrs:{role:"heading","aria-level":"4"},style:"display: block; margin-block-start: 1.33em; margin-block-end: 1.33em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h5:{proto:r(()=>HTMLHeadingElement,"proto"),attrs:{role:"heading","aria-level":"5"},style:"display: block; font-size: 0.83em; margin-block-start: 1.67em; margin-block-end: 1.67em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h6:{proto:r(()=>HTMLHeadingElement,"proto"),attrs:{role:"heading","aria-level":"6"},style:"display: block; font-size: 0.67em; margin-block-start: 2.33em; margin-block-end: 2.33em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},span:{proto:r(()=>HTMLSpanElement,"proto")},pre:{proto:r(()=>HTMLElement,"proto"),style:"display: block; font-family: monospace; white-space: pre; margin: 1em 0; --marp-auto-scaling-white-space: pre;"}},q="data-marp-auto-scaling-wrapper",C="data-marp-auto-scaling-svg",O="data-marp-auto-scaling-container",j=class j extends HTMLElement{constructor(){super();w(this,"container");w(this,"containerSize");w(this,"containerObserver");w(this,"svg");w(this,"svgComputedStyle");w(this,"svgPreserveAspectRatio","xMinYMid meet");w(this,"wrapper");w(this,"wrapperSize");w(this,"wrapperObserver");const n=r(s=>([t])=>{const{width:i,height:o}=t.contentRect;this[s]={width:i,height:o},this.updateSVGRect()},"e");this.attachShadow({mode:"open"}),this.containerObserver=new ResizeObserver(n("containerSize")),this.wrapperObserver=new ResizeObserver((...s)=>{n("wrapperSize")(...s),this.flushSvgDisplay()})}static get observedAttributes(){return["data-downscale-only"]}connectedCallback(){this.shadowRoot.innerHTML=`
+<style>
+  svg[${C}] { display: block; width: 100%; height: auto; vertical-align: top; }
+  span[${O}] { display: table; white-space: var(--marp-auto-scaling-white-space, nowrap); width: max-content; }
+</style>
+<div ${q}>
+  <svg part="svg" ${C}>
+    <foreignObject><span ${O}><slot></slot></span></foreignObject>
+  </svg>
+</div>
+    `.split(/\n\s*/).join(""),this.wrapper=this.shadowRoot.querySelector(`div[${q}]`)??void 0;const n=this.svg;this.svg=this.wrapper?.querySelector(`svg[${C}]`)??void 0,this.svg!==n&&(this.svgComputedStyle=this.svg?window.getComputedStyle(this.svg):void 0),this.container=this.svg?.querySelector(`span[${O}]`)??void 0,this.observe()}disconnectedCallback(){this.svg=void 0,this.svgComputedStyle=void 0,this.wrapper=void 0,this.container=void 0,this.observe()}attributeChangedCallback(){this.observe()}flushSvgDisplay(){const{svg:n}=this;n&&(n.style.display="inline",requestAnimationFrame(()=>{n.style.display=""}))}observe(){this.containerObserver.disconnect(),this.wrapperObserver.disconnect(),this.wrapper&&this.wrapperObserver.observe(this.wrapper),this.container&&this.containerObserver.observe(this.container),this.svgComputedStyle&&this.observeSVGStyle(this.svgComputedStyle)}observeSVGStyle(n){const s=r(()=>{const t=(()=>{const i=n.getPropertyValue("--preserve-aspect-ratio");return i?i.trim():`x${(({textAlign:o,direction:d})=>{if(o.endsWith("left"))return"Min";if(o.endsWith("right"))return"Max";if(o==="start"||o==="end"){let m=d==="rtl";return o==="end"&&(m=!m),m?"Max":"Min"}return"Mid"})(n)}YMid meet`})();t!==this.svgPreserveAspectRatio&&(this.svgPreserveAspectRatio=t,this.updateSVGRect()),n===this.svgComputedStyle&&requestAnimationFrame(s)},"t");s()}updateSVGRect(){let n=Math.ceil(this.containerSize?.width??0);const s=Math.ceil(this.containerSize?.height??0);this.dataset.downscaleOnly!==void 0&&(n=Math.max(n,this.wrapperSize?.width??0));const t=this.svg?.querySelector(":scope > foreignObject");if(t?.setAttribute("width",`${n}`),t?.setAttribute("height",`${s}`),this.svg&&(this.svg.setAttribute("viewBox",`0 0 ${n} ${s}`),this.svg.setAttribute("preserveAspectRatio",this.svgPreserveAspectRatio),this.svg.style.height=n<=0||s<=0?"0":""),this.container){const i=this.svgPreserveAspectRatio.toLowerCase();this.container.style.marginLeft=i.startsWith("xmid")||i.startsWith("xmax")?"auto":"0",this.container.style.marginRight=i.startsWith("xmi")?"auto":"0"}}};r(j,"s");let k=j;const T=r((c,{attrs:v={},style:n})=>class extends c{constructor(...s){super(...s);for(const[t,i]of Object.entries(v))this.hasAttribute(t)||this.setAttribute(t,i);this._shadow()}static get observedAttributes(){return["data-auto-scaling"]}connectedCallback(){this._update()}attributeChangedCallback(){this._update()}_shadow(){if(!this.shadowRoot)try{this.attachShadow({mode:"open"})}catch(s){if(!(s instanceof Error&&s.name==="NotSupportedError"))throw s}return this.shadowRoot}_update(){const s=this._shadow();if(s){const t=n?`<style>:host { ${n} }</style>`:"";let i="<slot></slot>";const{autoScaling:o}=this.dataset;o!==void 0&&(i=`<marp-auto-scaling exportparts="svg:auto-scaling" ${o==="downscale-only"?"data-downscale-only":""}>${i}</marp-auto-scaling>`),s.innerHTML=t+i}}},"r");let L;const z=r(()=>L??(L=!!document.createElement("div",{is:"marp-auto-scaling"}).outerHTML.startsWith("<div is"),L),"a"),F=Symbol();let A;const a="marpitSVGPolyfill:setZoomFactor,",l=Symbol(),e=Symbol(),p=r(()=>{const c=navigator.vendor==="Apple Computer, Inc.",v=c?[H]:[],n={then:r(s=>(c?(async()=>{if(A===void 0){const t=document.createElement("canvas");t.width=10,t.height=10;const i=t.getContext("2d"),o=new Image(10,10),d=new Promise(m=>{o.addEventListener("load",()=>m())});o.crossOrigin="anonymous",o.src="data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%2210%22%20viewBox%3D%220%200%201%201%22%3E%3CforeignObject%20width%3D%221%22%20height%3D%221%22%20requiredExtensions%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%3E%3Cdiv%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%20style%3D%22width%3A%201px%3B%20height%3A%201px%3B%20background%3A%20red%3B%20position%3A%20relative%22%3E%3C%2Fdiv%3E%3C%2FforeignObject%3E%3C%2Fsvg%3E",await d,i.drawImage(o,0,0),A=i.getImageData(5,5,1,1).data[3]<128}return A})().then(t=>{s?.(t?[H]:[])}):s?.([]),n),"then")};return Object.assign(v,n)},"p");let y,g;function H(c){const v=typeof c=="object"&&c.target||document,n=typeof c=="object"?c.zoom:c;window[e]||(Object.defineProperty(window,e,{configurable:!0,value:!0}),document.body.style.zoom=1.0001,document.body.offsetHeight,document.body.style.zoom=1,window.addEventListener("message",({data:t,origin:i})=>{if(i===window.origin)try{if(t&&typeof t=="string"&&t.startsWith(a)){const[,o]=t.split(","),d=Number.parseFloat(o);Number.isNaN(d)||(g=d)}}catch(o){console.error(o)}}));let s=!1;Array.from(v.querySelectorAll("svg[data-marpit-svg]"),t=>{var i,o,d,m;t.style.transform||(t.style.transform="translateZ(0)");const x=n||g||t.currentScale||1;y!==x&&(y=x,s=x);const W=t.getBoundingClientRect(),{length:Z}=t.children;for(let N=0;N<Z;N+=1){const $=t.children[N];if($.getScreenCTM){const M=$.getScreenCTM();if(M){const U=(o=(i=$.x)===null||i===void 0?void 0:i.baseVal.value)!==null&&o!==void 0?o:0,X=(m=(d=$.y)===null||d===void 0?void 0:d.baseVal.value)!==null&&m!==void 0?m:0,J=$.children.length;for(let P=0;P<J;P+=1){const G=$.children[P];if(G.tagName==="SECTION"){const{style:D}=G;D.transformOrigin||(D.transformOrigin=`${-U}px ${-X}px`),D.transform=`scale(${x}) matrix(${M.a}, ${M.b}, ${M.c}, ${M.d}, ${M.e-W.left}, ${M.f-W.top}) translateZ(0.0001px)`;break}}}}}}),s!==!1&&Array.from(v.querySelectorAll("iframe"),({contentWindow:t})=>{t?.postMessage(`${a}${s}`,window.origin==="null"?"*":window.origin)})}r(H,"v");function B({once:c=!1,target:v=document}={}){const n=(function(s=document){if(s[l])return s[l];let t=!0;const i=r(()=>{t=!1,delete s[l]},"i");Object.defineProperty(s,l,{configurable:!0,value:i});let o=[],d=!1;(async()=>{try{o=await p()}finally{d=!0}})();const m=r(()=>{for(const x of o)x({target:s});d&&o.length===0||t&&window.requestAnimationFrame(m)},"r");return m(),i})(v);return c?(n(),()=>{}):n}r(B,"w"),y=1,g=void 0;const Y=B,R=Symbol(),V=r((c=document)=>{if(typeof window>"u")throw new Error("Marp Core's browser script is valid only in browser context.");if(((t=document)=>{const i=window[F];i||customElements.define("marp-auto-scaling",k);for(const o of Object.keys(b)){const d=`marp-${o}`,m=b[o].proto();z()&&m!==HTMLElement?i||customElements.define(d,T(m,{style:b[o].style}),{extends:o}):(i||customElements.define(d,T(HTMLElement,b[o])),t.querySelectorAll(`${o}[is="${d}"]`).forEach(x=>{x.outerHTML=x.outerHTML.replace(new RegExp(`^<${o}`,"i"),`<${d}`).replace(new RegExp(`</${o}>$`,"i"),`</${d}>`)}))}window[F]=!0})(c),c[R])return c[R];const v=B({target:c}),n=r(()=>{v(),delete c[R]},"n"),s=Object.assign(n,{cleanup:n,update:r(()=>V(c),"update")});return Object.defineProperty(c,R,{configurable:!0,value:s}),s},"f");E.browser=V,h=V,h=Y}};const u={};function _(S){const E=u[S];if(E!==void 0)return E.exports;const h=u[S]={exports:{}};return f[S](h,h.exports,_),h.exports}r(_,"__webpack_require__");let Q={};(()=>{"use strict";var S=_(32);const E="marp_vscode_content_section",h="data-marp-vscode-content-start-line",b="data-marp-vscode-content-end-line";function q(a){a.core.ruler.push(E,l=>{if(l.inlineMode)return;let e=null,p=0,y=0;for(const g of l.tokens)g.map&&(p=g.map[0],y=Math.max(y,...g.map)),g.type==="marpit_slide_open"&&(e&&(e.map&&e.attrSet(h,e.map[0]),e.attrSet(b,p-1)),e=g);e&&(e.map&&e.attrSet(h,e.map[0]),e.attrSet(b,y))})}r(q,"marpVSCodeContentSection");const C="marp-vscode.overflowTracker",O=r(a=>typeof a=="object"&&a!=null&&"type"in a&&a.type===C&&"overflowElements"in a&&Array.isArray(a.overflowElements),"isOverflowTrackerEvent"),A=class A{constructor(l){this.postMessage=l,this.delay=150,this.update()}update(){window.setTimeout(()=>this.detectOverflowElements(),this.delay)}cleanup(){}detectOverflowElements(){const l=[];for(const e of document.querySelectorAll(`section[${h}][${b}]`)){const p=e.scrollWidth-e.clientWidth,y=e.scrollHeight-e.clientHeight;if(p<=0&&y<=0)continue;const g=parseInt(e.getAttribute(h)||"",10),H=parseInt(e.getAttribute(b)||"",10);Number.isNaN(g)||Number.isNaN(H)||l.push({startLine:g,endLine:H})}this.postMessage(C,{overflowElements:l})}};r(A,"OverflowTracker");let k=A;function T(){let a;const l=window.cspAlerter?._messaging?.postMessage||window.styleLoadingMonitor?._poster?.postMessage,e=r(()=>{const p=document.getElementById("__marp-vscode");!!a!=!!p?(document.body.classList.toggle("marp-vscode",!!p),p?a={browser:(0,S.browser)(),overflowTracker:l?new k(l):void 0}:(a?.browser.cleanup(),a?.overflowTracker?.cleanup(),a=void 0)):(a?.browser.update(),a?.overflowTracker?.update()),a?(p&&L(p),z()):F()},"updateCallback");window.addEventListener("load",()=>window.setTimeout(e,100)),window.addEventListener("vscode.markdown.updateContent",e),e()}r(T,"preview");const L=r(a=>{a.querySelectorAll("[is]").forEach(l=>{if(l.nodeName.includes("-")||document.createElement(l.nodeName).constructor!==l.constructor)return;const{outerHTML:p}=l;l.outerHTML=p,console.debug("[marp-vscode] Custom element has been upgraded forcibly:",p.slice(0,p.indexOf(">")+1||void 0))})},"forceUpgradeCustomElements"),z=r(()=>{const a=document.querySelectorAll("style:not(#__marp-vscode-style,#_defaultStyles,[data-marp-vscode-body])"),l=document.querySelectorAll('link[rel="stylesheet"][href]:not([href*="marp-vscode"])');a.forEach(e=>{e.closest("#__marp-vscode")||(e.dataset.marpVscodeBody=e.textContent??"",e.textContent="")}),l.forEach(e=>{if(e.closest("#__marp-vscode"))return;const{href:p}=e;e.dataset.marpVscodeHref=p,e.removeAttribute("href")})},"removeStyles"),F=r(()=>{const a=document.querySelectorAll("style[data-marp-vscode-body]"),l=document.querySelectorAll("link[data-marp-vscode-href]");a.forEach(e=>{e.textContent=e.dataset.marpVscodeBody||"",delete e.dataset.marpVscodeBody}),l.forEach(e=>{e.href=e.dataset.marpVscodeHref||"",delete e.dataset.marpVscodeHref})},"restoreStyles");T()})()})();})();
+
+</script>
+
+        </body>
+        </html>
